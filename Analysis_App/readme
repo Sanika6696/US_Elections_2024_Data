@@ -1,0 +1,180 @@
+## Project Title
+**Tracking Political Sentiments: Analyzing Election-Driven Discussions on Reddit and 4chan**
+
+---
+## Project Overview
+This project examines the dynamics of online discourse during the 2024 U.S. presidential election by analyzing sentiment, engagement, and behavioral patterns on Reddit and 4chan. It provides insights into how political events influence public sentiment and interaction across these platforms.
+
+Our implementation focuses on answering the following research questions:
+1. **What key entities and topics emerge from flagged toxic comments on different subreddits and 4chan’s /pol/ board, and what do they reveal about online toxicity??**
+2. **What is the relationship between sentiment levels (polarity and subjectivity) and the content of online discussions, based on the analysis of comments?**
+3. **What dominant terms and underlying themes emerge from analyzing flagged toxic comments in high-toxicity, high-engagement discussions?**
+
+This project delivers a **Command-Line Interface (CLI)** that provides interactive querying and results visualization for the analyses.
+
+---
+## Setup:
+  ```bash
+   python3 -m venv ml_env
+   source ml_env/bin/activate
+   pip install -r requirements.txt
+```
+**Ensure all dependencies are installed correctly:**
+
+```bash
+pip list
+```
+
+**Install language models for SpaCy:**
+
+```bash
+python3 -m spacy download en_core_web_sm
+```
+**Execute the code:**
+- Refer the commands below
+
+---
+
+### **1. Named Entity Recognition (NER) Analysis** 
+- Extracts and categorizes entities (e.g., people, organizations, locations) from toxic comments on Reddit and 4chan.
+- Uses `spaCy` for NER to classify entities by type (e.g., PERSON, EVENT, NORP) and presents them in an interactive dropdown format.
+- Allows users to explore entities by type for a specified date range or all available data.
+- Results are saved in HTML format, enabling easy exploration and analysis of flagged toxic comments.
+
+- **Reddit Command**
+  ```bash
+  python3 reddit_analyzer/reddit_toxicity_analyzer.py --analysis-type="NER" --date-range="ALL" --output reddit_analyzer/ner_date_range_all_results.html
+  ```
+    - The command above runs the reddit_toxicity_analyzer.py script to perform NER on all toxic Reddit comments. 
+    -- **`analysis-type="NER"`:** Specifies that NER analysis should be performed on the toxic comments.
+  -- **`date-range="ALL"`:** Analyzes all available toxic comments, ignoring any date filtering.
+  -- **`output reddit_analyzer/ner_date_range_all_results.html`:** Directs the output to an HTML file, where the results of the NER analysis are stored for interactive exploration.
+
+  ```bash 
+  python3 reddit_analyzer/reddit_toxicity_analyzer.py --analysis-type="NER" --date-range="20241127-20241128" --output reddit_analyzer/ner_date_range_20241127_20241128_results.html
+  ```
+  - The command runs the reddit_toxicity_analyzer.py script to perform NER on toxic Reddit comments from a specific date range (November 27-28, 2024).
+   -- **`analysis-type="NER"`:** Specifies that NER should be performed on the toxic comments.
+   -- **`date-range="20241127-20241128"`:** Filters the toxic comments to analyze only those within the specified date range (November 27 to November 28, 2024).
+   -- **`output reddit_analyzer/ner_date_range_20241127_20241128_results.html`:** Saves the NER analysis results for the given date range in an HTML file for interactive exploration.
+  
+
+
+- **4chan Command**
+  ```bash 
+  python3 chan_analyzer/chan_toxicity_analyzer.py --analysis-type="NER" --date-range="ALL" --output chan_analyzer/ner_date_range_all_results.html
+  ```
+  - The command runs the chan_toxicity_analyzer.py script to perform NER on all toxic 4chan comments.
+  -- **`analysis-type="NER"`:** Specifies that NER should be performed on the toxic comments.
+  -- **`date-range="ALL"`:** Analyzes all available toxic comments from 4chan, ignoring any date filtering.
+  -- **`output chan_analyzer/ner_date_range_all_results.html`:** Saves the NER results in an HTML file for interactive exploration of the extracted entities.
+
+  ```bash
+    python3 chan_analyzer/chan_toxicity_analyzer.py --analysis-type="NER" --date-range="20241209-20241210" --output chan_analyzer/ner_date_range_20241209_20241210_results.html
+  ```    
+  - Runs Named Entity Recognition on toxic 4chan comments from December 9-10, 2024.
+  -- **`analysis-type="NER"`:** Specifies that NER should be performed on the toxic comments.
+  -- **`date-range="20241209-20241210"`:** Analyzes toxic 4chan comments from the specific date range of December 9-10, 2024.
+  -- **`output chan_analyzer/ner_date_range_20241209_20241210_results.html`:** Saves the NER results in an HTML file for interactive exploration of the extracted entities from this date range.
+
+### **2. Sentiment Analysis** 
+- Sentiment analysis is performed on toxic comments from Reddit and 4chan using `TextBlob`, extracting polarity (emotional tone) and subjectivity (personal opinion).
+- The analysis can be filtered by date range, upvote threshold (for Reddit), and country name (for 4chan).
+- The results are saved in a text file(`.txt`), with each comment’s polarity and subjectivity values, providing insights into the sentiment levels and the nature of the discussions.
+
+- **Reddit Command**
+  ```bash
+  python3 reddit_analyzer/reddit_toxicity_analyzer.py --analysis-type="SNT" --date-range="ALL" --upvote-threshold=1000 --output reddit_analyzer/snt_date_range_all.txt
+  ```
+  - The command runs the reddit_toxicity_analyzer.py script to perform Sentiment Analysis on all toxic Reddit comments.
+  -- **`analysis-type="SNT"`:** Specifies that Sentiment Analysis should be performed on the toxic comments.
+  -- **`date-range="ALL"`:** Analyzes all available toxic Reddit comments, with no date filtering.
+  -- **`upvote-threshold=1000`:** Filters comments with at least 1000 upvotes for analysis.
+  -- **`output reddit_analyzer/snt_date_range_all.txt`:** Saves the results of the sentiment analysis in a text file for each comment, displaying polarity and subjectivity values. 
+  ```bash
+  python3 reddit_analyzer/reddit_toxicity_analyzer.py --analysis-type="SNT" --date-range="20241127-20241128" --upvote-threshold=500 --output reddit_analyzer/snt_date_range_20241127_20241128.txt
+  ```  
+  - Runs Sentiment Analysis on all toxic Reddit comments from November 27-28, 2024.
+  -- **`date-range="20241127-20241128"`:** Analyzes comments from this specific date range.
+  -- **`upvote-threshold=500`:** Filters comments with at least 500 upvotes.
+  -- **`output reddit_analyzer/snt_date_range_20241127_20241128.txt`:** Saves the sentiment results in a text file for the specified date range.
+ 
+
+- **4chan Command**
+  ```bash
+  python3 chan_analyzer/chan_toxicity_analyzer.py --analysis-type="SNT" --date-range="ALL" --country-name="United States" --output chan_analyzer/snt_date_range_all.txt
+  ```
+  - Runs Sentiment Analysis on all toxic 4chan comments based on country-name.
+  -- **`date-range="ALL"`:** Analyzes all available toxic comments without date filtering.
+  -- **`country-name="United States"`:** Filters the comments to analyze those from the United States.
+  -- **`output chan_analyzer/snt_date_range_all.txt`:** Saves the sentiment results in a text file for all the analyzed comments.
+
+  ```bash
+  python3 chan_analyzer/chan_toxicity_analyzer.py --analysis-type="SNT" --date-range="20241209-20241210" --country-name="United Kingdom" --output chan_analyzer/snt_date_range_20241209_20241210.txt
+  ```  
+
+- Runs Sentiment Analysis on 4chan toxic comments from December 9-10, 2024, filtered by the country "United Kingdom".  
+  - **`analysis-type="SNT"`**: Specifies that Sentiment Analysis should be performed on the toxic comments.  
+  - **`date-range="20241209-20241210"`**: Analyzes toxic 4chan comments from this specific date range.  
+  - **`country-name="United Kingdom"`**: Filters the comments to analyze those from the United Kingdom.  
+  - **`output chan_analyzer/snt_date_range_20241209_20241210.txt`**: Saves the sentiment analysis results in a text file for the given date range.  
+
+
+### **3. Latent Dirichlet Allocation (LDA) Topic Modeling** 
+ - Latent Dirichlet Allocation (LDA) Topic Modeling identifies dominant topics in toxic comments by grouping similar words into topics using `sklearn`.
+ - The analysis extracts the five to ten most frequently used words from the top five topics and outputs them in an HTML file.
+ - The command can analyze all available data or a specific date range, generating a detailed report with topics and their associated words.
+
+
+- **Reddit Command:**  
+  ```bash
+  python3 reddit_analyzer/reddit_toxicity_analyzer.py --analysis-type="LDA" --date-range="ALL" --output reddit_analyzer/lda_date_range_all_topics.html
+  ```
+   - Runs LDA Topic Modeling on all toxic Reddit comments, identifying key topics and their most frequent words.
+  -- **`analysis-type="LDA"`:** Specifies that LDA should be used for topic modeling.
+  -- **`date-range="ALL"`:** Analyzes all available toxic Reddit comments, with no date filtering.
+  -- **`output reddit_analyzer/lda_date_range_all_topics.html`:** Saves the top topics and associated words in an HTML file for exploration.
+  ```bash
+  python3 reddit_analyzer/reddit_toxicity_analyzer.py --analysis-type="LDA" --date-range="20241127-20241128" --output reddit_analyzer/lda_date_range_20241127_20241128_topics.html
+  ```
+  - Runs LDA Topic Modeling on toxic Reddit comments from November 27-28, 2024.
+  -- **`analysis-type="LDA"`:** Specifies that LDA should be used for topic modeling.
+  -- **`date-range="20241127-20241128"`:** Analyzes toxic comments from this specific date range.
+  -- **`output reddit_analyzer/lda_date_range_20241127_20241128_topics.html`:** Saves the identified topics and their associated words in an HTML file for further analysis.
+
+- **4chan Command**
+  ```bash
+  python3 chan_analyzer/chan_toxicity_analyzer.py --analysis-type="LDA" --date-range="ALL" --output chan_analyzer/lda_date_range_all_topics.html
+  ```
+  -  Runs LDA Topic Modeling on all toxic 4chan comments, identifying key topics and their most frequent words.
+  -- **`analysis-type="LDA`":** Specifies that LDA should be used for topic modeling.
+  -- **`date-range="ALL`":** Analyzes all available toxic 4chan comments.
+  -- **`output chan_analyzer/lda_date_range_all_topics.html`:** Saves the identified topics and associated words in an HTML file for exploration.
+
+  ```bash
+  python3 chan_analyzer/chan_toxicity_analyzer.py --analysis-type="LDA" --date-range="20241209-20241210" --output chan_analyzer/lda_date_range_20241209_20241210_topics.html
+  ``` 
+  
+  - Runs LDA Topic Modeling on toxic 4chan comments from December 9-10, 2024, identifying key topics and their most frequent words.
+  -- **`analysis-type="LDA"`:** Specifies that LDA should be used for topic modeling.
+  -- **`date-range="20241209-20241210"`:** Analyzes toxic comments from this specific date range.
+  -- **`output chan_analyzer/lda_date_range_20241209_20241210_topics.html`:** Saves the identified topics and associated words in an HTML file for exploration.
+
+---
+
+## Tools and Technologies Used
+### Programming Languages
+- Python
+
+### Libraries and Frameworks
+- **Data Collection and Analysis:**
+  - `spaCy`, `textblob`, `scikit-learn`, `psycopg2`, `spacy download en_core_web_sm`
+- **Visualization:**
+  - `matplotlib`, `seaborn`
+- **CLI Design:**
+  - `argparse`, `rich`, `json`
+
+### Data Storage
+- PostgreSQL (for storing and querying Reddit and 4chan data).
+
+### The Reddit APIs Oauth credentials are loaded through environment variables, if you require them please ask us.
