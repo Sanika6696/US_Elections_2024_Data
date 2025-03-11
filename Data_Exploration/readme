@@ -1,0 +1,29 @@
+Testing plot generation code:
+
+python3 -m venv plot_env
+source plot_env/bin/activate
+pip install -r requirements.txt
+
+
+Ensure all dependencies are installed correctly:
+
+pip list
+
+Ensure all the hardcoded paths inside the code for reading/generating files are as expected
+
+Install language models for SpaCy: 
+python3 -m spacy download en_core_web_sm
+
+Execute the code:
+
+e.g.
+
+nohup python3 reddit_comments.py &
+
+Plot generation can take a fair amount of time so better to run it as a background job.
+
+Some of the code reads CSV files. You can access these files at https://drive.google.com/drive/folders/1FfImemej9bpH4RhEQSSEFQ4So4w6XFh7?usp=drive_link
+
+We could not upload them here due to GitHub's size limit.
+
+Please let us know in case you can't access the above Google Drive link and we will provide it to you.
