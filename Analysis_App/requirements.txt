@@ -1,0 +1,6 @@
+psycopg2-binary>=2.9.0
+spacy>=3.0.0
+scikit-learn>=0.24.0
+datetime>=4.3
+textblob
+
