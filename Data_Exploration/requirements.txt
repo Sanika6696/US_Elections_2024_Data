@@ -1,0 +1,15 @@
+pyfaktory
+python-dotenv ~= 1.0
+requests ~= 2.32
+psycopg2-binary ~= 2.9
+pandas ~= 1.5
+nltk ~= 3.8
+textblob ~= 0.17
+matplotlib ~= 3.7
+spacy ~= 3.5
+plotly ~= 5.15
+numpy ~= 1.24
+seaborn ~= 0.12
+vaderSentiment ~= 3.3
+wordcloud
+geopandas
