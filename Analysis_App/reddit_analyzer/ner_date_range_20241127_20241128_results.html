@@ -1,0 +1,191 @@
+
+    <html>
+    <head>
+    <style>
+        .dropdown {
+            margin-bottom: 10px;
+        }
+        .dropdown-content {
+            display: none;
+            margin-left: 20px;
+        }
+        .dropdown-button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: left;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+    </head>
+    <body>
+    <h1>Named Entity Recognition Results</h1>
+    
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('ORG')">ORG</button>
+            <div id="ORG" class="dropdown-content">
+                <ul>
+        <li>AF</li><li>Annnnnnnnnd</li><li>Bond</li><li>Bruh</li><li>CBP</li><li>CIA</li><li>Choad</li><li>Clueless</li><li>Confederacy</li><li>Congress</li><li>Cripple</li><li>DEI</li><li>DNC</li><li>DOJ</li><li>Develop</li><li>Dumbass Americans</li><li>EuroAmerican</li><li>FBI</li><li>FIL</li><li>Facebook and</li><li>Fake News</li><li>Fox News</li><li>GO FUCK YOURSELF !</li><li>GOP</li><li>Google</li><li>Great FING job America Some Canadian</li><li>Hamas</li><li>Hezbollah</li><li>Idiocracy</li><li>Judicial</li><li>LOL</li><li>LOST</li><li>Latinx</li><li>Lego</li><li>MAGA</li><li>MAL</li><li>MSNBC</li><li>Mafia</li><li>McDonalds</li><li>Medicare</li><li>Mossad</li><li>NATO</li><li>NAZIS</li><li>NO SUCH THING AS HALF A NAZI</li><li>NYT</li><li>Newsweek</li><li>Nickelodeon Junior</li><li>Old Guard</li><li>Pathetic</li><li>Pfft</li><li>Press</li><li>QAnon</li><li>STD</li><li>STUPID AF</li><li>Sandy Hook</li><li>Senate</li><li>Shuns</li><li>Stupidest</li><li>TERF</li><li>TIL</li><li>Tiffany's</li><li>TikTok</li><li>Troll</li><li>Trump</li><li>Trumper</li><li>Turner</li><li>Vindman</li><li>WTF</li><li>Wait</li><li>Walz</li><li>White</li><li>White House</li><li>congress</li><li>fox news</li><li>the Democrat Party</li><li>the Department of Education</li><li>the Earth Johnson</li><li>the Heritage Foundation</li><li>the Republican Party</li><li>the trans community</li><li>the trans movement</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('NORP')">NORP</button>
+            <div id="NORP" class="dropdown-content">
+                <ul>
+        <li>African</li><li>American</li><li>Americans</li><li>Arab</li><li>Arabs</li><li>Asian</li><li>Asians</li><li>Canadian</li><li>Christian</li><li>Congrats</li><li>Democrat</li><li>Democrats</li><li>Dems</li><li>European American</li><li>Europeans</li><li>Floridians</li><li>Frankenkaren</li><li>Iranian</li><li>Irish</li><li>Islamic</li><li>Israeli</li><li>Jew</li><li>Jewish</li><li>Jews</li><li>Lebanese</li><li>Litani</li><li>Marxist</li><li>Mexicans</li><li>Muslim</li><li>Muslims</li><li>Native American</li><li>Nazi</li><li>Nazis</li><li>Normal Americans</li><li>Palestianian Nazi</li><li>Palestinian</li><li>Palestinians</li><li>Reddit</li><li>Republican</li><li>Republicans</li><li>Russian</li><li>Russians</li><li>Scut Farkas</li><li>South African</li><li>Tesla</li><li>Trans</li><li>Trumpists</li><li>Zionist</li><li>anti-american</li><li>dem</li><li>democrat</li><li>democrats</li><li>n’t Americans</li><li>palestinians</li><li>pro-Palestine Muslim</li><li>republicans</li><li>trans</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('PERSON')">PERSON</button>
+            <div id="PERSON" class="dropdown-content">
+                <ul>
+        <li>Adam</li><li>Adam Smith</li><li>Africains</li><li>Africans</li><li>Alex Jones</li><li>Anne</li><li>Apartheid Clyde</li><li>Assad</li><li>Bahahahah</li><li>Barbie</li><li>Bernie</li><li>Bezos</li><li>Biden</li><li>Blah</li><li>Buddha</li><li>Buddy</li><li>Burn</li><li>COVID</li><li>COVID-19</li><li>Calm</li><li>Cannon</li><li>Charlie Kirk</li><li>Clinton</li><li>Cmon</li><li>Complete Fucking Asshole</li><li>Covid</li><li>Dem</li><li>Deport</li><li>Don</li><li>Donald Trump</li><li>Donnie</li><li>Elon Musk</li><li>Elon Musk's</li><li>F Ilhan</li><li>Fetterman</li><li>Funny</li><li>GTFO</li><li>Girl</li><li>Godwin</li><li>Grover Dill</li><li>Grow</li><li>Harris</li><li>Hesbollah</li><li>Hitler</li><li>Homan</li><li>Idiots All</li><li>Jack</li><li>James Carville</li><li>Jeff Bezos</li><li>Jesus Christ</li><li>Kamala</li><li>Lil Biden</li><li>Loser</li><li>Maga</li><li>Marx</li><li>Melvin</li><li>Merrick</li><li>Merrick Garland</li><li>Michelle</li><li>Musk</li><li>Nimitz</li><li>Propaganda</li><li>Putin</li><li>Rest</li><li>Rich</li><li>Rico</li><li>Rudy</li><li>Shut</li><li>Smollett</li><li>Soros</li><li>Stupid Magats</li><li>Thiel</li><li>Tim Walz</li><li>Tom Homan</li><li>Trump</li><li>Trump Tariffs</li><li>Trumps</li><li>Turmpie</li><li>Twitter</li><li>Vaccines</li><li>Vladimir Putin</li><li>WIERD</li><li>Willie Brown</li><li>Ya</li><li>cope</li><li>felon supporter</li><li>fu k</li><li>ivermectin</li><li>james carville</li><li>kamala</li><li>moron</li><li>muskrat</li><li>ya</li><li>ya weirdo</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('LOC')">LOC</button>
+            <div id="LOC" class="dropdown-content">
+                <ul>
+        <li>Eastern Europe</li><li>Europe</li><li>Harlem</li><li>Muller</li><li>New England</li><li>Qanon</li><li>Useless Epstein</li><li>the Middle East</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('CARDINAL')">CARDINAL</button>
+            <div id="CARDINAL" class="dropdown-content">
+                <ul>
+        <li>0</li><li>1</li><li>10/7/23</li><li>2</li><li>2/3</li><li>20</li><li>200</li><li>2025</li><li>215</li><li>3</li><li>34</li><li>400</li><li>4chan</li><li>50</li><li>6</li><li>80 million</li><li>90%+</li><li>T1</li><li>Zero</li><li>approximately 5,000</li><li>billions</li><li>half</li><li>millions</li><li>one</li><li>roughly a 20</li><li>six</li><li>thousands</li><li>two</li><li>zero</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('GPE')">GPE</button>
+            <div id="GPE" class="dropdown-content">
+                <ul>
+        <li>AI</li><li>Alabama</li><li>America</li><li>Canada</li><li>China</li><li>Costa Rica</li><li>D.C.</li><li>DR</li><li>Danielle</li><li>Egypt</li><li>Florida</li><li>France</li><li>Gaza</li><li>Greece</li><li>Helzbollah</li><li>Hypocrites</li><li>Iraq</li><li>Israel</li><li>JD</li><li>Kamala</li><li>Mexico</li><li>Mildly</li><li>New Brunswick</li><li>Nina</li><li>Norway</li><li>Nova Scotia</li><li>Palestine</li><li>Raegan</li><li>Reddit</li><li>Russia</li><li>Santa Ana</li><li>Satan</li><li>South Africa</li><li>South Korea</li><li>Sweeden</li><li>TF</li><li>Taiwan</li><li>Texas</li><li>Truml</li><li>U.S.</li><li>US</li><li>USA</li><li>Ukraine</li><li>Us</li><li>Washington</li><li>Wuhan</li><li>ZERO</li><li>california</li><li>f**k</li><li>florida</li><li>msDNC</li><li>n’t</li><li>paris</li><li>the United States</li><li>y’allqueda</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('ORDINAL')">ORDINAL</button>
+            <div id="ORDINAL" class="dropdown-content">
+                <ul>
+        <li>5th</li><li>First</li><li>Secondly</li><li>Third</li><li>fifth</li><li>first</li><li>second</li><li>sixth</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('EVENT')">EVENT</button>
+            <div id="EVENT" class="dropdown-content">
+                <ul>
+        <li>Operation</li><li>WWII</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('DATE')">DATE</button>
+            <div id="DATE" class="dropdown-content">
+                <ul>
+        <li>10+ years ago</li><li>13 year old</li><li>1460</li><li>18</li><li>1930s</li><li>1982</li><li>1993</li><li>2 days</li><li>2 weeks</li><li>20+ years</li><li>2003-2018</li><li>2004</li><li>2020</li><li>2024</li><li>40 years</li><li>January 20th</li><li>January 6</li><li>July 13th</li><li>October 7th</li><li>Satan</li><li>Saturday</li><li>September 11th</li><li>a good day</li><li>a week</li><li>a year</li><li>a year later</li><li>all day</li><li>fucking years</li><li>seventy year</li><li>the day</li><li>the last 10 years</li><li>the last 30 years</li><li>the last 4 years</li><li>the next 4 years</li><li>the past 4 years</li><li>the past year</li><li>this holiday season</li><li>today</li><li>tomorrow</li><li>two weeks</li><li>week</li><li>week-long</li><li>years</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('MONEY')">MONEY</button>
+            <div id="MONEY" class="dropdown-content">
+                <ul>
+        <li>$1 million dollars</li><li>1b</li><li>300</li><li>5</li><li>tens of billions of dollars</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('TIME')">TIME</button>
+            <div id="TIME" class="dropdown-content">
+                <ul>
+        <li>every minute</li><li>night</li><li>noon</li><li>the 4.5 hour</li><li>this morning</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('FAC')">FAC</button>
+            <div id="FAC" class="dropdown-content">
+                <ul>
+        <li>Guantanamo</li><li>Pentagon</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('PERCENT')">PERCENT</button>
+            <div id="PERCENT" class="dropdown-content">
+                <ul>
+        <li>0.01 percent</li><li>23%</li><li>25%</li><li>30-50%</li><li>70%</li><li>75%</li><li>90%</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('LAW')">LAW</button>
+            <div id="LAW" class="dropdown-content">
+                <ul>
+        <li>Constitution</li><li>Sharia Law</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('PRODUCT')">PRODUCT</button>
+            <div id="PRODUCT" class="dropdown-content">
+                <ul>
+        <li>Project 2025</li><li>Sanewashing</li><li>YouTube</li><li>slob45</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('LANGUAGE')">LANGUAGE</button>
+            <div id="LANGUAGE" class="dropdown-content">
+                <ul>
+        <li>English</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown('WORK_OF_ART')">WORK_OF_ART</button>
+            <div id="WORK_OF_ART" class="dropdown-content">
+                <ul>
+        <li>WhErE ArE YoU GeTtInG YoUr InFoRmATiOn FrOm</li>
+                </ul>
+            </div>
+        </div>
+        
+    </body>
+    </html>
+    
